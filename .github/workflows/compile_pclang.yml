@@ -50,9 +50,6 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
-      - name: Create work directory
-        run: mkdir -p /workdir
-
       - name: Checkout
         uses: actions/checkout@main
 
