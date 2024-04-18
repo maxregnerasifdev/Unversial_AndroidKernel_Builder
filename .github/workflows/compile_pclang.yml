@@ -61,7 +61,6 @@ jobs:
       - name: Setting up the environment
         run: |
           sudo apt-get update -y
-          sudo apt-get upgrade -y
           sudo apt-get install build-essential gcc-aarch64-linux-gnu -y
 
       - name: Clone source code
