@@ -45,12 +45,14 @@ env:
   CCACHE_DIR: ~/.ccache
   BUILDER: /workdir/toolchain/bin/
   
-
 jobs:
   build:
     runs-on: ubuntu-20.04
 
     steps:
+      - name: Create work directory
+        run: mkdir -p /workdir
+
       - name: Checkout
         uses: actions/checkout@main
 
@@ -59,7 +61,6 @@ jobs:
         with:
           timezoneLinux: "America/Sao_Paulo"
 
-      
       - name: Setting up the environment
         run: |
           sudo apt-get update -y
@@ -86,7 +87,6 @@ jobs:
           sdk-version: '13'
           build-tools-version: '32.0.0'
           target-platform: 'android-33'
-
 
       - name: Set CCache (${{github.event.inputs.ccache}})
         id: ccache
